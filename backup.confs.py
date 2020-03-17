@@ -18,10 +18,10 @@ def createSSHClient(server, port, user, password):
 	client.connect(server, port, user, password)
 	return client
 
-server = "192.168.144.5"
+server = "192.168.144.XXXX"
 port = "22"
 user = "admin"
-password = "2IAFQKe3LCotkJCw"
+password = "xxxxxxxxxxx"
 
 
 ssh = createSSHClient(server, port, user, password)
@@ -57,9 +57,9 @@ myTeamsMessage.send()
 #now = datetime.datetime.now()
 
 #astmh
-#server = "192.168.144.5"
+#server = "192.168.144.XXXXX"
 #u#sername = "admin"
-#password = "2IAFQKe3LCotkJCw"
+#password = "xxxxxxxxxxxxxxxxx"
 #conf_path = "/var/run/fastpath/startup-config"
 #filename_prefix = "C:\\Users\\user\\Desktop\\confs\\" + server
 
