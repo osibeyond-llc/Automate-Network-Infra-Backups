@@ -1,6 +1,11 @@
 import os, datetime, time, sys, pymsteams
 
 sys.path.append("C:/Users/user/backup.conf")
+sys.path.append("C:/Users/user/AppData/Local/Programs/Python/Python38/python.exe")
+sys.path.append("C:/Users/user/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/site-packages")
+sys.path.append("C:/Users/user/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/site-packages/pymsteams")
+sys.path.append("C:/Users/user/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0/LocalCache/local-packages/Python38/site-packages/pymsteams-0.1.12-py3.8.egg-info")
+
 
 import paramiko, scp
 from scp import SCPClient
@@ -18,10 +23,10 @@ def createSSHClient(server, port, user, password):
 	client.connect(server, port, user, password)
 	return client
 
-server = "192.168.144.XXXX"
+server = "192.168.zzzzzzz"
 port = "22"
-user = "admin"
-password = "xxxxxxxxxxx"
+user = "yyyyyyy"
+password = "xxxxxxxxxxxxxxx"
 
 
 ssh = createSSHClient(server, port, user, password)
@@ -44,7 +49,7 @@ scp.get("/tmp/running.cfg", path + "/running.cfg")
 
 
 #email to teams, datetime, first and tailing 20 chars as confirmation
-myTeamsMessage.text("Server:" + server + "  |  Date: " + nowstring + "| Directory Name: " + path + "| system.cfg present: " + str(os.path.exists(path + "/system.cfg")) + " - system.cfg size: " + str(os.path.getsize(path + "/system.cfg")) + "| running.cfg present: " + str(os.path.exists(path + "/running.cfg")) + " - running.cfg size: " + str(os.path.getsize(path + "/running.cfg")))
+myTeamsMessage.text("Server:" + server + "  |  Date: " + nowstring + "| Directory Name: " + path + "| system.cfg present: **" + str(os.path.exists(path + "/system.cfg")) + "** - system.cfg size: " + str(os.path.getsize(path + "/system.cfg")) + "| running.cfg present: **" + str(os.path.exists(path + "/running.cfg")) + "** - running.cfg size: " + str(os.path.getsize(path + "/running.cfg")))
 print(("Server: " + server + "  |  Date: " + nowstring + "  |  Directory Name: " + path + "  |  system.cfg present: " + str(os.path.exists(path + "/system.cfg")) + " - system.cfg size: " + str(os.path.getsize(path + "/system.cfg")) + "  |  running.cfg present: " + str(os.path.exists(path + "/running.cfg")) + " - running.cfg size: " + str(os.path.getsize(path + "/running.cfg"))))
 
 myTeamsMessage.send()
@@ -57,9 +62,9 @@ myTeamsMessage.send()
 #now = datetime.datetime.now()
 
 #astmh
-#server = "192.168.144.XXXXX"
-#u#sername = "admin"
-#password = "xxxxxxxxxxxxxxxxx"
+#server = "192.168.xxxxx"
+#u#sername = "yyyyyyyyy"
+#password = "zzzzzzzzzzzz"
 #conf_path = "/var/run/fastpath/startup-config"
 #filename_prefix = "C:\\Users\\user\\Desktop\\confs\\" + server
 
